@@ -1,12 +1,12 @@
-// Fixed entry: exactly 12 ASCII characters / UTF-8 bytes; gate allows 1–30 characters.
+// Fixed entry: exactly 9 ASCII characters / UTF-8 bytes; gate allows 1–30 characters.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const WORD = "kindergarten";
+const WORD = "cafeteria";
 const codePoints = [...WORD].length;
 if (codePoints < 1 || codePoints > 30 || /\s/u.test(WORD)) {
   throw new Error("Entry must contain 1–30 code points and no whitespace.");
 }
-if (!/^[a-z]+$/u.test(WORD) || codePoints !== 12) {
+if (!/^[a-z]+$/u.test(WORD) || codePoints !== 9) {
   throw new Error("Entry must match the documented lowercase ASCII word length.");
 }
 
